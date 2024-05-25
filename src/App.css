@@ -1,42 +1,62 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+/* App.css */
+
+.circle {
+  position: fixed;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+  background-color: #0084ff; /* Messenger blue color */
+  color: #fff; /* Text color */
+  border-radius: 50%; /* Circle */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Drop shadow */
+  z-index: 9999; /* Ensure the div stays on top */
+  width: 60px; /* Adjust the size of the circle */
+  height: 60px; /* Adjust the size of the circle */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: Arial, sans-serif; /* Use a common font */
+  cursor: pointer; /* Change cursor to pointer */
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
-}
-
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.frame {
+  position: fixed;
+  top: 50%;
+  left: 87%;
+  transform: translate(-50%, -50%);
+  background-color: #fff;
+  padding: 20px;
+  border: 1px solid #ddd;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  z-index: 9999; /* Ensure the frame stays on top */
+  width: 300px; /* Set frame width */
+  max-width: 80%; /* Limit frame width */
+  border-radius: 10px; /* Curvy edges */
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+.input-field,
+.output-textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px; /* Curvy edges */
+  box-sizing: border-box;
+  font-size: 16px;
 }
 
-.card {
-  padding: 2em;
+.output-textarea {
+  height: 100px;
+  resize: none;
 }
 
-.read-the-docs {
-  color: #888;
+.button {
+  padding: 10px 20px;
+  cursor: pointer;
+  background-color: #0084ff;
+  color: #fff;
+  border: none;
+  border-radius: 5px; /* Curvy edges */
+  font-size: 16px;
+  transition: background-color 0.3s ease;
 }

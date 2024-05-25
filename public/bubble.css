@@ -1,0 +1,88 @@
+/* bubble.css */
+
+/* Global styles */
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+  
+  /* Bubble styles */
+  .bubble-container {
+    position: fixed;
+    top: 40%;
+    right: 0;
+    transform: translateY(-50%);
+    background-color: #0084ff;
+    color: #fff;
+    border-radius: 50%;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    z-index: 9999;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+  }
+  
+/* Form styles */
+.form-container {
+    position: fixed;
+    top: 40%;
+    left: 87%;
+    transform: translate(-50%, -50%);
+    background-color: #ffffff; /* White background */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5); /* Increased shadow intensity */
+    z-index: 9999;
+    width: 300px;
+    max-width: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center items horizontally */
+    border: 2px solid #ddd; /* Light grey border for added separation */
+    transition: opacity 0.3s ease-in-out; 
+  }
+  
+  
+  .input-field,
+  .textarea-field,
+  .button-field {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    font-size: 16px;
+    overflow-x: auto;
+  }
+  
+  .textarea-field {
+    height: 100px;
+    resize: none;
+    color: black;  
+    overflow-y: auto 
+  }
+  
+  .input-field {
+    color: black;
+  }
+
+  .button-field {
+    width: 50%;
+    background-color: #0084ff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .button-field:hover {
+    background-color: #0056b3;
+  }
+  
