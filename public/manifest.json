@@ -17,5 +17,8 @@
     ],
     "background": {
       "service_worker": "background.js"
-    }
+    },
+    "web_accessible_resources": [
+      "https://lottie.host/390b8617-164c-4aa2-8f2b-9cd346762825/M6dOfIJtO1.json"
+    ]
   }
