@@ -3,20 +3,11 @@
     "manifest_version": 3,
     "name": "AI COMPANION",
     "version": "1.0",
-    "description": "A Chrome extension built with React",
+    "description": "A Chrome extension built with React JS",
     "action": {
       "default_popup": "../index.html"
     },
-    "content_scripts": [
-      {
-        "matches": ["<all_urls>"],
-        "js": ["dist/content.bundle.js"]
-      }
-    ],
     "permissions": [
       "activeTab"
-    ],
-    "background": {
-      "service_worker": "dist/background.bundle.js"
-    }
+    ]   
   }
