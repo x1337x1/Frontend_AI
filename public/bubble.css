@@ -1,88 +1,159 @@
-/* bubble.css */
-
 /* Global styles */
 body {
-    font-family: 'Roboto', sans-serif;
-    margin: 0;
-    padding: 0;
-  }
-  
-  /* Bubble styles */
-  .bubble-container {
-    position: fixed;
-    top: 40%;
-    right: 0;
-    transform: translateY(-50%);
-    background-color: #0084ff;
-    color: #fff;
-    border-radius: 50%;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-    z-index: 9999;
-    width: 60px;
-    height: 60px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
-  }
-  
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f5f5f5;
+}
+
+/* Bubble styles */
+.bubble-container {
+  position: fixed;
+  top: 40%;
+  right: 20px; /* Positioned with some space from the right */
+  transform: translateY(-50%);
+  background-color: #0084ff;
+  color: #fff;
+  border-radius: 50%;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  z-index: 9999;
+  width: 80px;
+  height: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  font-size: 32px;
+}
+
 /* Form styles */
 .form-container {
-    position: fixed;
-    top: 40%;
-    left: 87%;
-    transform: translate(-50%, -50%);
-    background-color: #ffffff; /* White background */
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5); /* Increased shadow intensity */
-    z-index: 9999;
-    width: 300px;
-    max-width: 80%;
-    display: flex;
-    flex-direction: column;
-    align-items: center; /* Center items horizontally */
-    border: 2px solid #ddd; /* Light grey border for added separation */
-    transition: opacity 0.3s ease-in-out; 
-  }
-  
-  
-  .input-field,
-  .textarea-field,
-  .button-field {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    box-sizing: border-box;
-    font-size: 16px;
-    overflow-x: auto;
-  }
-  
-  .textarea-field {
-    height: 100px;
-    resize: none;
-    color: black;  
-    overflow-y: auto 
-  }
-  
-  .input-field {
-    color: black;
-  }
+  position: fixed;
+  top: 40%;
+  right: 120px; /* Positioned to the left of the bubble container */
+  transform: translateY(-50%);
+  background-color: #ffffff;
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  z-index: 9998; /* Slightly lower z-index than the bubble */
+  width: 400px;
+  max-width: 90%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 1px solid #ddd;
+  transition: opacity 0.3s ease-in-out;
+}
 
-  .button-field {
-    width: 50%;
-    background-color: #0084ff;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    font-size: 18px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
+.header {
+  width: 100%;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.header h2 {
+  margin: 0;
+  color: #333;
+  font-size: 24px;
+  font-weight: 500;
+}
+
+.input-field,
+.textarea-field {
+  width: 100%;
+  padding: 15px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  box-sizing: border-box;
+  font-size: 18px;
+  color: #333;
+  background-color: #f9f9f9;
+}
+
+.input-field:focus,
+.textarea-field:focus {
+  border-color: #0084ff;
+  outline: none;
+  background-color: #fff;
+}
+
+.textarea-field {
+  height: 150px;
+  resize: none;
+  transition: opacity 0.3s ease-in-out; /* Smooth transition */
+}
+.textarea-field.fetching {
+  opacity: 0.7; /* Dim the textarea when fetching */
+  pointer-events: none; /* Disable interaction during fetch */
+  position: relative; /* Ensure relative positioning for absolute elements */
+}
+
+.textarea-field.fetching::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 50px;
+  height: 50px;
+  margin-top: -25px;
+  margin-left: -25px;
+  border-radius: 50%;
+  border: 3px solid rgba(0, 132, 255, 0.3);
+  border-top-color: #0084ff;
+  animation: spin 1s linear infinite; /* Animation properties */
+}
+
+@keyframes spin {
+  0% {
+    transform: translate(-50%, -50%) rotate(0deg);
   }
-  
-  .button-field:hover {
-    background-color: #0056b3;
+  100% {
+    transform: translate(-50%, -50%) rotate(360deg);
   }
-  
+}
+
+.button-group {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.button-group {
+  display: flex;
+  justify-content: space-between; /* Adjust as needed */
+  width: 100%;
+  margin-top: 15px; /* Adjust spacing between the buttons */
+}
+
+
+.button-field,
+.button-field-train {
+  flex: 1;
+  padding: 8px;
+  margin: 3px;
+  border: none;
+  border-radius: 8px;
+  font-size: 17px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.button-field {
+  background-color: #0084ff;
+  color: #fff;
+}
+
+.button-field:hover {
+  background-color: #0056b3;
+}
+
+.button-field-train {
+  background-color: #ff5722;
+  color: #fff;
+}
+
+.button-field-train:hover {
+  background-color: #e64a19;
+}

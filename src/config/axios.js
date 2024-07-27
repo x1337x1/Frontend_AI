@@ -3,7 +3,7 @@ import axios from 'axios';
 class AxiosClient {
   constructor() {
     this.axiosInstance = axios.create({
-      baseURL: 'http://localhost:1337', // Your local server URL
+      baseURL: 'http://127.0.0.1:5000', // Your local server URL
       timeout: 10000, // Optional: set a timeout for requests
       headers: { 'Content-Type': 'application/json' } // Optional: set default headers
     });
