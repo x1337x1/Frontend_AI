@@ -49,7 +49,7 @@ console.log('contact id',getBrowserFingerprint().toString())
         tenant_id: contactId
       }
       const response = await axiosClient.post('/query', payload)
-      setOutputText(`${response.data}`); 
+      setOutputText(`${response.data.message}`); 
       setIsFetching(false)  
     } catch (error) {   
       console.error(error)  

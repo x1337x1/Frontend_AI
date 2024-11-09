@@ -29,7 +29,7 @@ body {
 /* Form styles */
 .form-container {
   position: fixed;
-  top: 40%;
+  top: 65%;
   right: 120px; /* Positioned to the left of the bubble container */
   transform: translateY(-50%);
   background-color: #ffffff;
